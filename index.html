@@ -1,0 +1,80 @@
+<html>
+
+<head>
+<title>Hand-tool Identification Quiz</title>
+</head>
+
+<script type="text/javascript">
+/* Tool images and names */
+var tools = [["images/ballpeen_hammer.png", "Ball-peen hammer"],
+	["images/aviation_snips.png", "Aviation snips"],
+	["images/scratch_awl.png", "Scratch awl"],
+	["images/carpenter_square.png", "Carpenter/framing square"],
+	["images/center_punch.png", "Center punch"],
+	["images/comb_slipjoint_pliers.png", "Combination slip-joint pliers"],
+	["images/coping_saw.png", "Coping saw"],
+	["images/crosscut_saw.png", "Cross cut saw"],
+	["images/curved_claw_hammer.png", "Curved claw hammer"],
+	["images/diagonal_cutting_pliers.png", "Diagonal cutting pliers"],
+	["images/end_nippers.png", "End nippers"],
+	["images/machine_wood_screws.png", "Round-head machine, flat-head wood, and round-head wood screws"],
+	["images/groove_joint_pliers.png", "Groove joint/channel lock/water pump pliers"],
+	["images/hack_saw.png", "Hack saw"],
+	["images/keyhole_saw.png", "Keyhole/compass saw"],
+	["images/lineman_pliers.png", "Lineman's pliers"],
+	["images/tape_measure.png", "Tape measure"],
+	["images/model_saw.png", "Model/dovetail saw"],
+	["images/nail_set.png", "Nail set"],
+	["images/metal_screw.png", "Pan-head, sheet metal screw"],
+	["images/phillips_driver.png", "Number-2 Phillips Head screwdriver"],
+	["images/pin_punch.png", "Pin punch"],
+	["images/rawhide_mallet.png", "Raw-hide mallet"],
+	["images/straight_claw_hammer.png", "Straight claw (ripping) hammer"],
+	["images/rip_saw.png", "Rip saw"],
+	["images/sledgehammer.png", "Sledgehammer"],
+	["images/sliding_t_bevel.png", "Sliding T-bevel"],
+	["images/slotted_screwdriver.png", "Slotted-screw screwdriver"],
+	["images/combination_wrench.png", "Combination open-end box-end wrench"],
+	["images/tin_snips.png", "Tin snips"],
+	["images/tri_square.png", "Tri-square"],
+	["images/wood_chisel.png", "Wood chisel"],
+	["images/adjustable_wrench.png", "Adjustable-end wrench"],
+	["images/countersink.png", "Countersink"],
+	["images/utility_knife.png", "Utility knife"],
+	["images/files.png", "Half-round and flat files"]];
+	
+/* Current tool number */
+var tool_number = 0;
+
+/* Generate a random integer */
+function randint(min, max)
+{
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+	
+/* Show the name of the tool */
+function show_tool_name()
+{
+	alert(tools[tool_number][1]);
+}
+
+/* Choose a new tool */
+function choose_new_tool()
+{
+	tool_number = randint(0, 35);
+	document.getElementById("tool").src = tools[tool_number][0];
+}
+</script>
+
+<body>
+
+<img src="images/ballpeen_hammer.png" id="tool"/>
+
+<form>
+<button type="button" onClick="show_tool_name();">Show tool name</button>
+<button type="button" onClick="choose_new_tool();">Choose new tool</button>
+</form>
+
+</body>
+
+</html>
