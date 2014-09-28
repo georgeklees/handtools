@@ -42,9 +42,38 @@ var tools = [["images/ballpeen_hammer.png", "Ball-peen hammer"],
 	["images/countersink.png", "Countersink"],
 	["images/utility_knife.png", "Utility knife"],
 	["images/files.png", "Half-round and flat files"]];
+	
+/* Current tool number */
+var tool_number = 0;
+
+/* Generate a random integer */
+function randint(min, max)
+{
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+	
+/* Show the name of the tool */
+function show_tool_name()
+{
+	alert(tools[tool_number][1]);
+}
+
+/* Choose a new tool */
+function choose_new_tool()
+{
+	tool_number = randint(0, 35);
+	document.getElementById("tool").src = tools[tool_number][0];
+}
 </script>
 
 <body>
+
+<img src="images/ballpeen_hammer.png" id="tool"/>
+
+<form>
+<button type="button" onClick="show_tool_name();">Show tool name</button>
+<button type="button" onClick="choose_new_tool();">Choose new tool</button>
+</form>
 
 </body>
 
